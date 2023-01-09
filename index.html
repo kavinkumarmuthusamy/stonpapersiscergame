@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissor Game</title>
+    <link rel="stylesheet"type="text/css"href="game.css">
+
+</head>
+<body>
+    <header>
+        <h1>Stone Paper Scissor</h1>
+    </header>
+        <div class="score-board">
+            <div id="user-label" class="badge">user</div>
+            <div id="computer-label" class="badge">comp</div>
+            <span id="user-score">0</span>:<span id="computer-score">0</span>
+        </div>
+        <div class="result">
+        <p id="text">Let Start The Mach.</p></div>
+        <div class="image">
+        
+        <div class="choices" >
+            <div class="choice" id="r">
+               <button id="rock" onclick="rock()"> <img src="rock.png"></button>
+        </div>
+            <div class="choice" id="p">
+                  <button id="paper" onclick="paper()"> <img src="paper.png"></button> 
+            </div>
+            <div class="choice" id="s"> 
+               <button id="siscer" onclick="siscer()"><img src="siscer.png"></button> 
+            </div>
+        </div>
+        </div>
+        <br><br>
+        <p id="action-message">make your move</p>
+        <h5>Set limit point</h5>
+        <input type="number" id="fixed">
+        <button onclick="summit()">Fixed</button>
+ <h1 class="res"></h1>
+
+        <!-- --------------------script-------------------------- -->
+
+
+      <script>
+                let computer=0;
+                let user =0;
+                let fixed=0;
+                function summit(){
+                fixed=document.getElementById("fixed").value;
+                console.log(fixed);}
+                   function rock(){
+                    var arr=["rock","paper","siscer"];
+                   const random=arr[(Math.floor(Math.random()*(arr.length)))];
+                    if(random=="paper"){
+                        computer++;
+                        document.getElementById("computer-score").innerText=computer;
+                        document.getElementById("text").innerHTML="paper cover stone.you loss!";
+                        console.log(computer+"computer");
+                        if(fixed==computer){;
+                            document.querySelector(".res").innerHTML="Computer Is Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="siscer"){
+                        user++;
+                        document.getElementById("user-score").innerText=user;
+                        document.getElementById("text").innerHTML="stone break siscer.you win!";
+                        console.log(user);
+                        if(fixed==user){
+                            document.querySelector(".res").innerHTML="You Will be Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="rock"){
+                        document.getElementById("text").innerHTML="Two are stone.great Escape!";
+                    }
+                   }
+
+
+
+                   function paper(){
+                    var arr=["rock","paper","siscer"];
+                   const random=arr[(Math.floor(Math.random()*(arr.length)))];
+                   if(random=="siscer"){
+                        computer++;
+                        document.getElementById("computer-score").innerText=computer;
+                        console.log(computer+"computer");
+                        document.getElementById("text").innerHTML="paper is cut by siscer.you loss!";
+                        if(fixed==computer){
+                            document.querySelector(".res").innerHTML="Computer Is Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="rock"){
+                        user++;
+                        document.getElementById("user-score").innerText=user;
+                        document.getElementById("text").innerHTML="paper cover stone.you win!";
+                        console.log(user);
+                        if(fixed==user){
+                            document.querySelector(".res").innerHTML="You Will be Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="paper"){
+                        document.getElementById("text").innerHTML="Two are paper.great Escape!";
+                    }
+                   }
+
+
+
+
+                   function siscer(){
+                    var arr=["rock","paper","siscer"];
+                   const random=arr[(Math.floor(Math.random()*(arr.length)))];
+                   if(random=="paper"){
+                        user++;
+                        document.getElementById("computer-score").innerText=user;
+                        document.getElementById("text").innerHTML="paper is cut by siscer.you win !";
+                        console.log(user);
+                        if(fixed==user){
+                            document.querySelector(".res").innerHTML="You Will be Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="rock"){
+                        computer++;
+                        document.getElementById("user-score").innerText=cumputer;
+                        console.log(computer+"computer");
+                        document.getElementById("text").innerHTML="stone break siscer.you loss !";
+                        if(fixed==computer){
+                            document.querySelector(".res").innerHTML="Computer Is Win";
+                            computer=0;
+                             user =0;
+                        }
+                    }
+                    if(random=="siscer"){
+                        document.getElementById("text").innerHTML="Two are siscer.great Escape!";
+                    }
+                   }
+      </script>
+    </body>
+</html>
