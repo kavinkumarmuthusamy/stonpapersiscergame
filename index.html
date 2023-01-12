@@ -120,7 +120,7 @@
                    const random=arr[(Math.floor(Math.random()*(arr.length)))];
                    if(random=="paper"){
                         user++;
-                        document.getElementById("computer-score").innerText=user;
+                        document.getElementById("user-score").innerText=user;
                         document.getElementById("text").innerHTML="paper is cut by siscer.you win !";
                         console.log(user);
                         if(fixed==user){
@@ -131,7 +131,7 @@
                     }
                     if(random=="rock"){
                         computer++;
-                        document.getElementById("user-score").innerText=cumputer;
+                        document.getElementById("computer-score").innerText=computer;
                         console.log(computer+"computer");
                         document.getElementById("text").innerHTML="stone break siscer.you loss !";
                         if(fixed==computer){
